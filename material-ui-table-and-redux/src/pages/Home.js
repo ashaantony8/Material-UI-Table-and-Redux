@@ -9,8 +9,9 @@ import { styled } from "@mui/material/styles";
 import TableCell, { tableCellClasses } from "@mui/material/TableCell";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteUser, loadUsers } from "../redux/action";
-import ButtonGroup from '@mui/material/ButtonGroup';
+import ButtonGroup from "@mui/material/ButtonGroup";
 import Button from "@mui/material/Button";
+import { useHistory } from "react-router-dom";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -32,23 +33,20 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-
 const Home = () => {
   const { users } = useSelector((state) => state.data);
 
   let dispatch = useDispatch();
-
+  let history = useHistory();
   useEffect(() => {
     dispatch(loadUsers());
   }, [dispatch]);
 
-
-  const handleDelete =(id) =>{
-    if(window.confirm("Are you sure wanted to delete this user?")){
-      dispatch(deleteUser(id))
+  const handleDelete = (id) => {
+    if (window.confirm("Are you sure wanted to delete this user?")) {
+      dispatch(deleteUser(id));
     }
-  }
-  
+  };
 
   return (
     <div>
@@ -86,11 +84,14 @@ const Home = () => {
                       variant="contained"
                       aria-label="contained primary button group"
                     >
-                      <Button style={{marginRight:"5px"}} color="secondary"
-                      onClick={()=> handleDelete(user.id)}
-                      >Delete</Button>
+                      <Button
+                        style={{ marginRight: "5px" }}
+                        color="secondary"
+                        onClick={() => handleDelete(user.id)}
+                      >
+                        Delete
+                      </Button>
                       <Button color="primary">Edit</Button>
-                 
                     </ButtonGroup>
                   </StyledTableCell>
                 </StyledTableRow>
@@ -98,6 +99,15 @@ const Home = () => {
           </TableBody>
         </Table>
       </TableContainer>
+      <div style={{ marginTop: "30px" }}>
+        <Button
+          color="success"
+          variant="contained"
+          onClick={() => history.push("/addUser")}
+        >
+          Add User
+        </Button>
+      </div>
     </div>
   );
 };
