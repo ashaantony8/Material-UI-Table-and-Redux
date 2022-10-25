@@ -1,25 +1,18 @@
 {
-    "user": [
-        {
-            "id": 1,
-            "name": "Leanne Graham",
-            "email": "Sincere@april.biz",
-            "address": "London",
-            "contact": "1-770-736-8031 x56442"
-        },
-        {
-            "id": 2,
-            "name": "Ervin Howell",
-            "email": "Shanna@melissa.tv",
-            "address": "Japan",
-            "contact": "010-692-6593 x09125"
-        },
-        {
-            "id": 3,
-            "name": "Clementine Bauch",
-            "email": "Nathan@yesenia.net",
-            "address": "Usa",
-            "contact": "1-463-123-4447"
-        }
-    ]
+  "user": [
+    {
+      "id": 1,
+      "name": "Leanne Graham",
+      "email": "Sincere@april.biz",
+      "address": "London",
+      "contact": "1-770-736-8031 x56442"
+    },
+    {
+      "id": 2,
+      "name": "Ervin Howell",
+      "email": "Shanna@melissa.tv",
+      "address": "Japan",
+      "contact": "010-692-6593 x09125"
+    }
+  ]
 }

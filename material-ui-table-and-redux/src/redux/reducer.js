@@ -9,11 +9,19 @@ const initialState = {
 const usersReducers = (state = initialState, action) => {
   switch (action.type) {
     case types.GET_USERS:
-        return{
-            ...state,
-            users:action.payload,
-            loading: false,
-        }
+      return {
+        ...state,
+        users: action.payload,
+        loading: false,
+      };
+
+    case types.DELETE_USER:
+      return {
+        ...state,
+
+        loading: false,
+      };
+
     default:
       return state;
   }
