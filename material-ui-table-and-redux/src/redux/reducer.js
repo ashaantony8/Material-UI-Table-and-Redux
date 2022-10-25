@@ -17,9 +17,17 @@ const usersReducers = (state = initialState, action) => {
 
     case types.DELETE_USER:
     case types.ADD_USER:
+      case types.UPDATE_USER:
       return {
         ...state,
 
+        loading: false,
+      };
+
+    case types.EDIT_USER:
+      return {
+        ...state,
+        users: action.payload,
         loading: false,
       };
 
